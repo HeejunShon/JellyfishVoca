@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 일시정지 버튼 이미지  -->
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/pause"
+        android:title="일시정지"
+        app:showAsAction="ifRoom" />
+
+    <!-- Settings, should always be in the overflow -->
+    <item android:id="@+id/action_settings2"
+        android:title="항목1"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_settings3"
+        android:title="항목2"
+        app:showAsAction="never"/>
+
+</menu>

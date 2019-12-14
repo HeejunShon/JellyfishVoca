@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <!-- 위에 단계 표시 툴바 -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorButtonAndBar"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="단어장"
+            android:fontFamily="@font/binggrae"
+            android:textColor="@color/colorBarTitle"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            />
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+
+            android:id="@+id/et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="데이터 입력"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="추가"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            android:fontFamily="@font/binggrae"
+            android:background="@drawable/half_opacity_bg"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="삭제"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            android:fontFamily="@font/binggrae"
+            android:background="@drawable/half_opacity_bg"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="20dp"
+        android:choiceMode="multipleChoice"
+        android:background="@drawable/half_opacity_bg">
+
+    </ListView>
+
+
+    <Button
+        android:id="@+id/word_main_test"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="60dp"
+        android:layout_margin="30dp"
+        android:paddingHorizontal="20dp"
+        android:background="@drawable/rounded"
+        android:text="시험보기"
+        android:textColor="#ffffff"
+        android:fontFamily="@font/binggrae"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+</LinearLayout>

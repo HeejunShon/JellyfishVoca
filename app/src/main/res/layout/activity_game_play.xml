@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context=".GamePlay">
+
+    <!-- 위에 단계 표시 툴바 -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorButtonAndBar"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="토익 1단계"
+            android:fontFamily="@font/binggrae"
+            android:textColor="@color/colorBarTitle"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            />
+
+    </android.support.v7.widget.Toolbar>
+
+    <!-- 툴바 제외 부분 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="#80000000"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:baselineAligned="false">
+
+            <!-- 수심, 뜻 리니어레이아웃 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+
+                    >
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="수심 : "
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/binggrae"/>
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="시간 : "
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/binggrae"/>
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:text="뜻 : "
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/binggrae"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="2"
+                    android:layout_gravity="right">
+
+                    <!-- 해파리 -->
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/jellyfish_basic" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_margin="10dp">
+
+                        <!-- 하트 이미지 3개 -->
+                        <ImageView
+                            android:id="@+id/heart1"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/heart"/>
+
+                        <ImageView
+                            android:id="@+id/heart2"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/heart"/>
+
+                        <ImageView
+                            android:id="@+id/heart3"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/heart"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 영단어 십자퍼즐 자리 -->
+
+        <ScrollView
+            android:id="@+id/game_scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/linearLayout"
+            android:layout_above="@+id/input_layout">
+
+            <!-- 십자말풀이 가로부분 리니어 레이아웃, 최대 15칸, 세로 부분은 자바로 구현 -->
+            <LinearLayout
+                android:id="@+id/game_main_layout"
+                android:orientation="vertical"
+                android:layout_margin="10dp"
+                android:weightSum="15"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorButtonAndBar"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:weightSum="5">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="10dp"
+                android:text="정답:"
+                android:textColor="@color/colorBarTitle"
+                android:fontFamily="@font/binggrae"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:layout_weight="2"/>
+            <EditText
+                android:id="@+id/edittext_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+            <Button
+                android:id="@+id/btnInsertWord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_gravity="right"
+                android:text="입력"
+                android:background="@drawable/half_opacity_bg"
+                android:textStyle="bold"
+                android:onClick="onInsertClicked" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
