@@ -47,7 +47,7 @@
             android:layout_alignParentTop="true"
             android:background="#80000000"
             android:orientation="horizontal"
-            android:padding="15dp"
+            android:padding="0dp"
             android:baselineAligned="false">
 
             <!-- 수심, 뜻 리니어레이아웃 -->
@@ -56,6 +56,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:weightSum="3"
+                android:layout_margin="5dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -63,8 +64,8 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:layout_weight="1"
-                    android:paddingLeft="10dp"
-
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
                     >
                     <TextView
                         android:id="@+id/textView"
@@ -74,6 +75,8 @@
                         android:textColor="#FFFFFF"
                         android:textSize="20dp"
                         android:textStyle="bold"
+                        android:paddingTop="7dp"
+                        android:paddingBottom="5dp"
                         android:fontFamily="@font/binggrae"/>
 
                     <TextView
@@ -84,6 +87,7 @@
                         android:textColor="#FFFFFF"
                         android:textSize="20dp"
                         android:textStyle="bold"
+                        android:paddingBottom="5dp"
                         android:fontFamily="@font/binggrae"/>
 
                     <TextView
